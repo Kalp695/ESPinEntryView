@@ -1,4 +1,7 @@
 # ESPinEntryView
+[![Platform](https://cocoapod-badges.herokuapp.com/p/ESPinEntryView/badge.png)](http://cocoadocs.org/docsets/ESPinEntryView)
+[![Version](https://cocoapod-badges.herokuapp.com/v/ESPinEntryView/badge.png)](http://cocoadocs.org/docsets/ESPinEntryView)
+
 iOS7 style passcode lock. Fully customizable.
 
 ## Examples
