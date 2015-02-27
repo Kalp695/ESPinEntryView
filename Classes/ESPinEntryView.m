@@ -79,6 +79,7 @@
 {
     [self setVibrate:YES];
     _code = [@"" copy];
+    [self setOpaque:YES];
     _backgroundColor = [UIColor colorWithWhite:0 alpha:.7];
     _alphabetLabels = [[NSMutableArray alloc] init];
     _dotViews = [[NSMutableArray alloc] init];
@@ -100,7 +101,7 @@
         make.edges.equalTo(_backgroundContainerView);
     }];
     
-    [super setBackgroundColor:[UIColor clearColor]];
+    [super setBackgroundColor:[UIColor whiteColor]];
     
     _canvas = [[_ESPinEntryViewCanvas alloc] initWithPinEntryView:self];
     [self addSubview:_canvas];
