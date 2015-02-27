@@ -60,8 +60,16 @@
 
 - (instancetype)initWithDelegate:(id<ESPinEntryDelegate>)aDelegate
 {
-    if (self = [super init]) {
+    if (self = [self init]) {
         [self setDelegate:aDelegate];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self _init];
     }
     return self;
 }
@@ -227,7 +235,8 @@
     [self setHeaderText:@"Enter passcode"];
     [self setBackgroundBlurRadius:15];
     [_deleteButton setTitle:self.cancelText forState:UIControlStateNormal];
-    
+    [self setBackgroundView:[[UIView alloc] init]];
+    [self.backgroundView setBackgroundColor:[UIColor grayColor]];
     [self _createDotViews];
 }
 
@@ -356,9 +365,9 @@
     }
 }
 
-- (void)setNumberOfDigits:(NSInteger)numberOfDigits
+- (void)setNumberOfDigits:(NSUInteger)numberOfDigits
 {
-    if (numberOfDigits == _numberOfDigits) { return; }
+    if (numberOfDigits == _numberOfDigits || numberOfDigits < 1) { return; }
     _numberOfDigits = numberOfDigits;
     [self _createDotViews];
 }

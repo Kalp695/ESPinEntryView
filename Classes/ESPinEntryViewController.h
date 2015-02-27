@@ -11,7 +11,26 @@
 
 @interface ESPinEntryViewController : UIViewController
 
+/**
+ *	@author Bas van Kuijck <bas@e-sites.nl>
+ *
+ *	The actual ESPinEntryView
+ *  @see ESPinEntryView for more information
+ *
+ *	@since 1.0
+ *  @date 26/02/2015
+ */
 @property (nonatomic, readonly, strong) ESPinEntryView *pinEntryView;
+
+/**
+ *	@author Bas van Kuijck <bas@e-sites.nl>
+ *
+ *	Forward declaration of the delegate
+ *  @see [ESPinEntryView delegate] for more information
+ *
+ *	@since 1.0
+ *  @date 26/02/2015
+ */
 @property (nonatomic, weak) id<ESPinEntryDelegate> delegate;
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil __attribute__((unavailable("use init instead")));

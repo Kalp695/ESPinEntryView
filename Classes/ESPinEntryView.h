@@ -69,12 +69,12 @@ static NSString *const ESPinEntryCodeDidUpdateNotification = @"ESPinEntryCodeDid
  *	This will be invoked once a digit is pressed
  *
  *	@param pinEntryView ESPinEntry*
- *	@param digit        NSInteger
+ *	@param digit        NSUInteger
  *
  *	@since 1.0
  *  @date 27/02/2015
  */
-- (void)pinEntry:(ESPinEntryView *)pinEntryView didPressDigit:(NSInteger)digit;
+- (void)pinEntry:(ESPinEntryView *)pinEntryView didPressDigit:(NSUInteger)digit;
 
 /**
  *	@author Bas van Kuijck <bas@e-sites.nl>
@@ -167,19 +167,8 @@ static NSString *const ESPinEntryCodeDidUpdateNotification = @"ESPinEntryCodeDid
 /**
  *	@author Bas van Kuijck <bas@e-sites.nl>
  *
- *	Should the device vibrate when an incorrect entry is given
- *  @note Default: YES
- *
- *	@since 1.0
- *  @date 27/02/2015
- */
-@property (nonatomic, readwrite, getter=shouldVibrate) BOOL vibrate;
-
-/**
- *	@author Bas van Kuijck <bas@e-sites.nl>
- *
  *	The background of the Entry view. This UIView will be blurred
- *  @note Deafult: nil
+ *  @note Deafult: A UIView with a gray background
  *
  *	@since 1.0
  *  @date 27/02/2015
@@ -219,12 +208,13 @@ static NSString *const ESPinEntryCodeDidUpdateNotification = @"ESPinEntryCodeDid
  *
  *	The total number of digits that should be entered.
  *  @warning When the number of digits that are entered reaches this point `pinEntry:isValidCode:` will be invoked
+ *  @warning Minimum must be 1
  *  @note Default: 4
  *
  *	@since 1.0
  *  @date 27/02/2015
  */
-@property (nonatomic, readwrite) NSInteger numberOfDigits;
+@property (nonatomic, readwrite) NSUInteger numberOfDigits;
 
 /**
  *	@author Bas van Kuijck <bas@e-sites.nl>
@@ -234,7 +224,7 @@ static NSString *const ESPinEntryCodeDidUpdateNotification = @"ESPinEntryCodeDid
  *	@since 1.0
  *  @date 27/02/2015
  */
-@property (nonatomic, readonly) NSInteger attempts;
+@property (nonatomic, readonly) NSUInteger attempts;
 
 /**
  *	@author Bas van Kuijck <bas@e-sites.nl>
@@ -248,6 +238,17 @@ static NSString *const ESPinEntryCodeDidUpdateNotification = @"ESPinEntryCodeDid
  *  @date 27/02/2015
  */
 @property (nonatomic, readonly, copy) NSString *code;
+
+/**
+ *	@author Bas van Kuijck <bas@e-sites.nl>
+ *
+ *	Should the device vibrate when an incorrect entry is given
+ *  @note Default: YES
+ *
+ *	@since 1.0
+ *  @date 27/02/2015
+ */
+@property (nonatomic, readwrite, getter=shouldVibrate) BOOL vibrate;
 
 // __________________________________________________________________________________________
 
