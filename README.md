@@ -11,8 +11,16 @@ iOS7 style passcode lock. Fully customizable.
 
 ## Installation
 
+### Cocoapods
 ```pod 'ESPinEntryView', '~> 1.0'```
 
+### Manually
+
+These classes have the following dependecies:
+- `QuartzCore` Framework
+- `AudioToolbox` Framework
+- [Masonry](https://github.com/Masonry/Masonry)
+- [FXBlurView](https://github.com/nicklockwood/FXBlurView)
 
 ## Usage
 
