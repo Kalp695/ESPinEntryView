@@ -30,6 +30,7 @@ These classes have the following dependecies:
 ```objc
 ESPinEntryView *entryView = [[ESPinEntryView alloc] initWithFrame:self.view.bounds];
 [entryView setBackgroundBlurRadius:15];
+[entryView setDelegate:self];
 [entryView setBackgroundView:[[UIView alloc] init]];
 [entryView.backgroundView setBackgroundColor:[UIColor blueColor]];
 [entryView setShowAlphabet:YES];
@@ -42,12 +43,23 @@ ESPinEntryView *entryView = [[ESPinEntryView alloc] initWithFrame:self.view.boun
 
 ```objc
 ESPinEntryViewController *viewController = [[ESPinEntryViewController alloc] init];
+[viewController setDelegate:self];
 [viewController.pinEntryView setBackgroundBlurRadius:15];
 [viewController.pinEntryView setBackgroundView:[[UIView alloc] init]];
 [viewController.pinEntryView setBackgroundColor:[UIColor blueColor]];
 [viewController.pinEntryView setShowAlphabet:YES];
 [viewController.pinEntryView setShowCancelButton:YES];
 [self presentViewController:viewController animated:YES completion:nil];
+```
+
+
+### Delegates
+```objc
+- (BOOL)pinEntry:(ESPinEntryView *)pinEntryView isValidCode:(NSString *)code
+{
+    NSLog(@"Attempt %zd", pinEntryView.attempts);
+    return [code isEqualToString:@"1234"];
+}
 ```
 
 ## Customize
