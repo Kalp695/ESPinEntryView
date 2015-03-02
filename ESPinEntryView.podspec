@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ESPinEntryView"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.author       = { "bvkuijck" => "bas@e-sites.nl" }
   s.license 	   = { :type => "BSD", :file => "LICENSE" }
   s.summary      = "iOS7 style passcode lock. Fully customizable."

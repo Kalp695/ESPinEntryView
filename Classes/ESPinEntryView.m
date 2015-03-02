@@ -230,6 +230,16 @@
     }];
     [_deleteButton setHidden:YES];
     
+    /**
+     *	@author Bas van Kuijck <bas@e-sites.nl>
+     *
+     *	Listen for orientation changes
+     *
+     *  @date 01/03/2015
+     *	@since 1.0.1
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_didChangeOrientation:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     // Default values
     [self setCancelText:@"Cancel"];
     [self setDeleteText:@"Delete"];
@@ -239,6 +249,23 @@
     [self setBackgroundView:[[UIView alloc] init]];
     [self.backgroundView setBackgroundColor:[UIColor grayColor]];
     [self _createDotViews];
+}
+
+#pragma mark - Orientation
+// ____________________________________________________________________________________________________________________
+
+
+/**
+ *	@author Bas van Kuijck <bas@e-sites.nl>
+ *
+ *	Orientation changes would invoke a redraw of the bacground canvas
+ *
+ *  @date 01/03/2015
+ *	@since 1.0.1
+ */
+- (void)_didChangeOrientation:(NSNotification *)notification
+{
+    [_canvas setNeedsDisplay];
 }
 
 #pragma mark - Interaction
@@ -621,6 +648,7 @@ CGSize _pinNumbersContainerSize()
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     _buttonBackgrounds = nil;
     _backgroundView = nil;
     _dotViews = nil;

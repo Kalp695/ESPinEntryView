@@ -21,11 +21,16 @@
 {
     if (self = [super init]) {
         
+        /**
+         * @author Bas van Kuijck <bas@e-sites.nl>
+         *
+         * Replace the `view` property with a `ESPinEntryView` instance
+         *
+         * @date 01/03/2015
+         * @since 1.0.1
+         */
         _pinEntryView = [[ESPinEntryView alloc] init];
-        [self.view addSubview:_pinEntryView];
-        [_pinEntryView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view);
-        }];
+        [self setView:_pinEntryView];
     }
     return self;
 }
