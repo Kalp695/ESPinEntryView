@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "ESPinEntryView"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.author       = { "bvkuijck" => "bas@e-sites.nl" }
   s.license 	   = { :type => "BSD", :file => "LICENSE" }
   s.summary      = "iOS7 style passcode lock. Fully customizable."
-  s.source       = { :git => "https://github.com/e-sites/ESPinEntryView.git", :tag => s.version.to_s   }
+  s.source       = { :git => "https://github.com/Kalp695/ESPinEntryView.git", :tag => s.version.to_s   }
   s.homepage     = "https://github.com/e-sites/ESPinEntryView"
   s.source_files = "Classes/*.{h,m}"
   s.platform     = :ios, '7.0'
