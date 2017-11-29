@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/e-sites/ESPinEntryView"
   s.source_files = "Classes/*.{h,m}"
   s.platform     = :ios, '7.0'
-  s.dependency 'Masonry', '~> 0.6'
+  s.dependency 'Masonry'
   s.dependency 'ReactiveCocoa', '~> 2.4'
   s.dependency 'FXBlurView', '~> 1.6'
   s.frameworks = 'QuartzCore', 'AudioToolbox'
