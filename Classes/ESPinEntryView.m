@@ -7,9 +7,9 @@
 //
 
 #import "ESPinEntryView.h"
-#import <Masonry.h>
+#import "Masonry.h"
 #import <QuartzCore/QuartzCore.h>
-#import <FXBlurView.h>
+#import "FXBlurView.h"
 #import <AudioToolbox/AudioServices.h>
 
 @interface _ESPinEntryViewCanvas : UIView
@@ -43,7 +43,7 @@
 
 - (instancetype)init
 {
-    if (self = [super init]) {
+    if (self = [super initWithFrame:CGRectZero]) {
         [self _init];
     }
     return self;
@@ -60,7 +60,7 @@
 
 - (instancetype)initWithDelegate:(id<ESPinEntryDelegate>)aDelegate
 {
-    if (self = [self init]) {
+    if (self = [self initWithFrame:CGRectZero]) {
         [self setDelegate:aDelegate];
     }
     return self;
